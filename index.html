@@ -3,67 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nom de l'entreprise - Nettoyage de vitres</title>
+  <title>Lumina.by.Cardon - Nettoyage de vitres</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body.no-js section {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
 </head>
-<body>
+<body class="no-js">
 
-  <!-- HERO (accueil) -->
+  <!-- HERO -->
   <header class="hero">
     <div class="container">
-      <h1>Nettoyage de vitres professionnel</h1>
-      <p>Des carreaux propres, un regard neuf sur vos espaces.</p>
-      <a href="#contact" class="btn">Demander un devis</a>
+      <h1>Faites briller vos vitres avec Lumina.by.Cardon</h1>
+      <p>Nettoyage de vitres soigné pour maisons, vitrines et bureaux</p>
+      <a href="#contact" class="btn">Demander un devis gratuit</a>
     </div>
   </header>
 
-  <!-- A propos -->
+  <!-- À PROPOS -->
   <section class="about">
     <div class="container">
-      <h2>Qui sommes-nous ?</h2>
-      <p>Nous sommes une entreprise spécialisée dans le nettoyage de vitres pour particuliers et professionnels...</p>
+      <h2>Qui suis-je ?</h2>
+      <p>Je m'appelle Priscillia Cardon. Après une reconversion professionnelle, j'ai décidé de créer Lumina.by.Cardon, une entreprise spécialisée dans le nettoyage de vitres, pour particuliers et professionnels. Mon objectif : un service fiable, soigné et personnalisé.</p>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- ZONE D'INTERVENTION -->
+  <section class="zone">
+    <div class="container">
+      <h2>Zone d'intervention</h2>
+      <p>Je me déplace autour de Valenciennes, Vieux-Condé et Péruwelz.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
   <section class="services">
     <div class="container">
-      <h2>Nos services</h2>
+      <h2>Prestations proposées</h2>
       <ul>
-        <li>Nettoyage vitres intérieur / extérieur</li>
+        <li>Vitres intérieures et extérieures</li>
         <li>Vitrines de commerces</li>
-        <li>Vérandas et baies vitrées</li>
+        <li>Baies vitrées et vérandas</li>
+        <li>Entretien ponctuel ou régulier</li>
       </ul>
     </div>
   </section>
 
-  <!-- Témoignages -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>Ils nous font confiance</h2>
-      <blockquote>“Travail rapide et soigné, je recommande !”</blockquote>
-    </div>
-  </section>
-
-  <!-- Formulaire de contact -->
+  <!-- FORMULAIRE DE CONTACT -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2>Demander un devis gratuit</h2>
+      <h2>Contact et devis</h2>
+      <p>Remplissez le formulaire ci-dessous ou écrivez-moi par WhatsApp ou par e-mail pour toute demande.</p>
       <form action="#" method="post">
         <input type="text" name="nom" placeholder="Votre nom" required />
         <input type="email" name="email" placeholder="Votre e-mail" required />
         <textarea name="message" placeholder="Décrivez votre besoin..."></textarea>
         <button type="submit">Envoyer</button>
       </form>
+      <div class="contact-links">
+        <a href="mailto:contact@lumina-cardon.fr">📧 contact@lumina-cardon.fr</a><br />
+        
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Nom de l'entreprise. Tous droits réservés.</p>
+      <p>&copy; 2025 Lumina.by.Cardon. Tous droits réservés. Sur devis uniquement.</p>
     </div>
   </footer>
 
+  <script>
+    document.body.classList.remove('no-js');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
